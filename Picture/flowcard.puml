@@ -1,0 +1,23 @@
+@startuml
+start
+:Login/Register;
+if (Role?) then (Penjual)
+  :Unggah Barang;
+  :Kelola Barang;
+  :Chat dengan Pembeli;
+else (Pembeli)
+  :Cari Barang;
+  :Pilih Barang;
+  :Chat dengan Penjual;
+  :Transaksi;
+endif
+:Admin?;
+if (Admin) then (Ya)
+  :Kelola Pengguna;
+  :Kelola Produk;
+  :Kelola Transaksi;
+else (Tidak)
+  :Selesai;
+endif
+stop
+@enduml

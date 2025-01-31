@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+actor Penjual
+actor Pembeli
+actor Admin
+
+rectangle "Sistem Jual Beli Barang Bekas" {
+  Penjual -- (Login/Register)
+  Penjual -- (Unggah Barang)
+  Penjual -- (Kelola Barang)
+  Penjual -- (Chat dengan Pembeli)
+  Penjual -- (Konfirmasi Transaksi)
+
+  Pembeli -- (Login/Register)
+  Pembeli -- (Cari Barang)
+  Pembeli -- (Transaksi)
+  Pembeli -- (Chat dengan Penjual)
+
+  Admin -- (Kelola Pengguna)
+  Admin -- (Kelola Produk)
+  Admin -- (Kelola Transaksi)
+}
+
+(Login/Register) <.. (Unggah Barang) : <<include>>
+(Login/Register) <.. (Cari Barang) : <<include>>
+(Login/Register) <.. (Kelola Pengguna) : <<include>>
+@enduml
